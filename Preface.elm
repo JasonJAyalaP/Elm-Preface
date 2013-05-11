@@ -41,9 +41,9 @@ tail xs = case xs of
             []     -> []
             (h::t) -> t
 
-index : [a] -> Int -> Maybe a
-index xs n = case xs of
-              []     -> Nothing
-              (h::t) -> if | n <= 0    -> Nothing
-                           | n == 1    -> Just h
-                           | otherwise -> t `index` (n-1)
+(#) : [a] -> Int -> Maybe a
+xs # n = case xs of
+           []     -> Nothing
+           (h::t) -> if | n <= 0    -> Nothing
+                        | n == 1    -> Just h
+                        | otherwise -> t # (n-1)

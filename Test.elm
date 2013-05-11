@@ -1,7 +1,7 @@
 module Test where
 
-import Preface
 import Either
+import Preface
 
 data Test a a = Test String a a
 type Grade = Either String String
@@ -48,9 +48,9 @@ grades =
   , grade <| Test "tail" (tail [1,2,3]) [2,3]
   , grade <| Test "tail []" (tail []) []
   , grade <| Test "tail [Hi]" (tail ["Hi"]) []
-  , grade <| Test "index string" ("Elm" `index` 3) (Just 'm')
-  , grade <| Test "index []" ([] `index` 1) Nothing
-  , grade <| Test "index -1" ("Elm" `index` (0-1)) Nothing
-  , grade <| Test "index high index" ("Elm" `index` 99) Nothing
+  , grade <| Test "# string" ("Elm" # 3) (Just 'm')
+  , grade <| Test "# []" ([] # 1) Nothing
+  , grade <| Test "# -1" ("Elm" # (0-1)) Nothing
+  , grade <| Test "# overflow" ("Elm" # 99) Nothing
   ]
 
