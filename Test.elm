@@ -59,4 +59,7 @@ grades =
   , try "iterate 1" (iterate not "Hi" 1) ["Hi"]
   , try "iterate *2" (iterate (\x->x*2) 1 5) [1,2,4,8,16]
   , try "iterate not 4" (iterate not True 4) [True, False, True, False]
+  , try "cycle 0" (cycle "Elm" 0) []
+  , try "cycle 1" (cycle "Elm" 1) "Elm"
+  , try "cycle Elm" (cycle "Elm" 3) "ElmElmElm"
   ]

@@ -52,3 +52,8 @@ iterate : (a -> a) -> a -> Int -> [a]
 iterate f x n = if | n <= 0    -> []
                    | n == 1    -> [x]
                    | otherwise -> x :: iterate f (f x) (n-1)
+
+cycle : [a] -> Int -> [a]
+cycle xs n = if | n <= 0    -> []
+                | n == 1    -> xs
+                | otherwise -> xs ++ cycle xs (n-1)
