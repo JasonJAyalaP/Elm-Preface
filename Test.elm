@@ -52,5 +52,8 @@ grades =
   , grade <| Test "# []" ([] # 1) Nothing
   , grade <| Test "# -1" ("Elm" # (0-1)) Nothing
   , grade <| Test "# overflow" ("Elm" # 99) Nothing
+  , grade <| Test "iterate []" (iterate not [] 0) []
+  , grade <| Test "iterate 1" (iterate not "Hi" 1) ["Hi"]
+  , grade <| Test "iterate *2" (iterate (\x->x*2) 1 5) [1,2,4,8,16]
+  , grade <| Test "iterate not 4" (iterate not True 4) [True, False, True, False]
   ]
-

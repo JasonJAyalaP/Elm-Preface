@@ -47,3 +47,8 @@ xs # n = case xs of
            (h::t) -> if | n <= 0    -> Nothing
                         | n == 1    -> Just h
                         | otherwise -> t # (n-1)
+
+iterate : (a -> a) -> a -> Int -> [a]
+iterate f x n = if | n <= 0    -> []
+                   | n == 1    -> [x]
+                   | otherwise -> x :: iterate f (f x) (n-1)
