@@ -57,3 +57,9 @@ cycle : [a] -> Int -> [a]
 cycle xs n = if | n <= 0    -> []
                 | n == 1    -> xs
                 | otherwise -> xs ++ cycle xs (n-1)
+
+find : (a -> Bool) -> [a] -> Maybe a
+find p xs = case xs of
+              []   -> Nothing
+              h::t -> if | (p h)     -> Just h
+                         | otherwise -> find p t

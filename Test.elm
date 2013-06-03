@@ -62,4 +62,7 @@ grades =
   , try "cycle 0" (cycle "Elm" 0) []
   , try "cycle 1" (cycle "Elm" 1) "Elm"
   , try "cycle Elm" (cycle "Elm" 3) "ElmElmElm"
+  , try "find isOdd" (find isOdd [2,4,3,7]) (Just 3)
+  , try "find isEven" (find isEven [1,3,55]) Nothing
+  , try "find []" (find isEven []) Nothing
   ]
