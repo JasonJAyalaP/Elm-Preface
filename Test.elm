@@ -1,7 +1,7 @@
 module Test where
 
-import Either
-import Preface
+import open Either
+import open Preface
 
 data Test a a = Test String a a
 type Grade = Either String String
