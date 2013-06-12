@@ -66,4 +66,5 @@ grades =
   , try "find isEven" (find isEven [1,3,55]) Nothing
   , try "find []" (find isEven []) Nothing
   , try "intercalate 1 2" (intercalate [1,2] [[3,4],[5,6]]) [3,4,1,2,5,6]
+  , try "unfoldr - 10" (unfoldr (\b -> if b == 0 then Nothing else Just (b, b-1)) 10) [10,9,8,7,6,5,4,3,2,1]
   ]

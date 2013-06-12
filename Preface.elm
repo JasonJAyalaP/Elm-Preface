@@ -66,3 +66,8 @@ find p xs = case xs of
 
 intercalate : [a] -> [[a]] -> [a]
 intercalate xs xss = xss |> intersperse xs |> concat
+
+unfoldr : (b -> Maybe (a, b)) -> b -> [a]
+unfoldr f b = case f b of
+                Just (a, b') -> a :: unfoldr f b'
+                Nothing      -> []
