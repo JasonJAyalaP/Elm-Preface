@@ -65,4 +65,5 @@ grades =
   , try "find isOdd" (find isOdd [2,4,3,7]) (Just 3)
   , try "find isEven" (find isEven [1,3,55]) Nothing
   , try "find []" (find isEven []) Nothing
+  , try "intercalate 1 2" (intercalate [1,2] [[3,4],[5,6]]) [3,4,1,2,5,6]
   ]

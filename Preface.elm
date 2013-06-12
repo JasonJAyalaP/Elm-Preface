@@ -61,5 +61,8 @@ cycle xs n = if | n <= 0    -> []
 find : (a -> Bool) -> [a] -> Maybe a
 find p xs = case xs of
               []   -> Nothing
-              h::t -> if | (p h)     -> Just h
+              h::t -> if | p h       -> Just h
                          | otherwise -> find p t
+
+intercalate : [a] -> [[a]] -> [a]
+intercalate xs xss = xss |> intersperse xs |> concat
